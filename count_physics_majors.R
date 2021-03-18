@@ -20,7 +20,17 @@ count_physics_majors <- function(sc,sr)
   print(out %>% filter(TERM_SHORT_DES != 'NA') %>% tally())
   
   
-  #here's a comment, but it wont' do anhthing yet.
+  #let's identify every phys majors first course in physics
+  #1) get all the first physics course
+  all_phys <- sc %>% filter(SBJCT_CD == 'PHYSICS' & CRSE_CMPNT_CD == "LEC") # get all physics courses that are lectures
+  all_phys <- all_phys %>% arrange(TERM_CD) %>% group_by(STDNT_ID) %>% filter(row_number() == 1) #get the first phys course!
+  
+  #now just get out the physics majors
+  fcourse <- n_physics %>% left_join(all_phys)
+  
+  #and count up their favorite first physics course
+  tab     <- fcourse %>% group_by(CATLG_NBR) %>% tally() %>% arrange(desc(n))
+  print(tab)
   
   return(out)
    
