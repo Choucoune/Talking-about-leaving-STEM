@@ -162,5 +162,3 @@ st_s <- st_s %>% select(st_id, female, ethniccode_cat, firstgen, lowincomflag, P
                         Phys160_GPA, Phys240_enrl, Phys240_GPA, Phys260_enrl, Phys260_GPA, Phys340_enrl, Phys340_GPA, 
                         Phys390_enrl, Phys390_GPA, P140_EVENT, P160_EVENT, P240_EVENT, P260_EVENT, P340_EVENT, P390_EVENT,
                         seq_compl, is_phys_major)
-
-# create a table with events that reflect 1st, 2nd, 3rd, and 4th course 
