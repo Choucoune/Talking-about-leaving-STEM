@@ -77,8 +77,6 @@ st_s$P340_EVENT <- 0
 st_s$P390_EVENT <- 0
 
 # Event=1 for P140/P160 when student doesn't enroll in P240/260
-# if event in P140, P160 event column will be NA
-# if event in P160, P140 event column will be NA
 st_s[st_s$Phys140_enrl==1 & st_s$Phys240_enrl==0 & st_s$Phys260_enrl==0, "P140_EVENT"] <- 1
 st_s[st_s$Phys160_enrl==1 & st_s$Phys240_enrl==0 & st_s$Phys260_enrl==0, "P160_EVENT"] <- 1
 
